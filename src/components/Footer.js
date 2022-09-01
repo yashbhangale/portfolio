@@ -2,7 +2,6 @@ import React from "react"
 import ReactDOM from "react-dom"
 //importing winbox https://github.com/nextapps-de/winbox/issues/1
 import WinBox from "winbox/src/js/winbox"
-import Contact from "./Contact"
 import { Link } from "gatsby"
 
 const checkScreenWidthMobile = () => {
@@ -11,38 +10,7 @@ const checkScreenWidthMobile = () => {
   }
 }
 
-const desktopButton = (
-  <button
-    className="popupWindowLinkButton"
-    style={{ cursor: "pointer" }}
-    onClick={() => {
-      const win = new WinBox({
-        title: "Contact me",
-        width: "80%",
-        height: "80%",
-        x: "center",
-        y: "center",
-        onfocus: function () {
-          this.removeClass("wb-no-focus")
-          this.addClass("wb-focus")
-        },
-        onblur: function () {
-          this.removeClass("wb-focus")
-          this.addClass("wb-no-focus")
-        },
-      })
 
-      ReactDOM.render(
-        React.createElement(Contact, {
-          close: () => win.close(),
-        }),
-        win.body
-      )
-    }}
-  >
-    Contact
-  </button>
-)
 
 const Footer = () => {
   return (
@@ -50,12 +18,16 @@ const Footer = () => {
       style={{ display: "flex", flexDirection: "column", margin: "auto" }}
     >
       <div style={{ margin: "auto" }}>
+        
         <Link to="/">Home</Link> {" | "}
-        {checkScreenWidthMobile() ? (
-          <Link to="/contact">Contact</Link>
-        ) : (
-          desktopButton
-        )}
+        
+        <a
+          href="https://www.linkedin.com/in/yashbhangale/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          contact
+        </a>
         {" | "}
         <a
           href="https://www.linkedin.com/in/yashbhangale/"
