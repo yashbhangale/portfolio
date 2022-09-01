@@ -8,6 +8,7 @@ import "winbox/dist/css/winbox.min.css"
 
 import PopupTerminalWindow from "../components/PopupTerminalWindow"
 
+
 export default function ItemsList() {
   const data = useStaticQuery(graphql`
     query {
@@ -195,10 +196,11 @@ export default function ItemsList() {
 
   const contactItem = (
     <li className="infoItem">
-      <button
+      <button 
         className="popupWindowLinkButton"
         style={{ cursor: "pointer" }}
-        onClick= {window.location.href = 'https://www.linkedin.com/in/yashbhangale/'} >📞 /Contact me </button>  
+        onClick={href => window.open("mailto:yashbhangale9@gmail.com")}
+        >📞 /Contact me </button>  
         
     </li>
   )
